@@ -1,17 +1,17 @@
 assert('FiberPool.new') do
-  fp = FilberPool.new
+  fp = FiberPool.new
   assert_kind_of FiberPool, fp
 end
 
 assert('FiberPool.start') do
-  FilberPool.start do |pool|
+  FiberPool.start do |pool|
     assert_kind_of FiberPool, pool
   end
 end
 
 assert('FiberPool.job') do
   n = 0
-  FilberPool.start do |pool|
+  FiberPool.start do |pool|
     pool.add do |job|
       n += 1
     end
